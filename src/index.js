@@ -31,7 +31,7 @@ ReactDOM.render(
       <Route path={`/admin`} component={AdminLayout} />
       <Route path={`/rtl`} component={RTLLayout} />
       <Route path={`/banner`} component={BannerLayout} />
-      <Redirect from={`/`} to='/admin/dashboard' />
+      <Redirect from={`/`} to='/auth/authentication/sign-in/cover' />
     </Switch>
   </HashRouter>,
   document.getElementById("root")

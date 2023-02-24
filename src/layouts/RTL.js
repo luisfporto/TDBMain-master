@@ -130,65 +130,64 @@ export default function Dashboard(props) {
   return (
     <ChakraProvider theme={theme} resetCss={false}>
       <RtlProvider>
-          <SidebarContext.Provider
-            value={{
-              sidebarWidth,
-              setSidebarWidth,
-              toggleSidebar,
-              setToggleSidebar,
-            }}>
-            <Sidebar
-              routes={routes}
-              logoText={"VISION UI DASHBOARD PRO"}
-              display='none'
-              sidebarVariant={sidebarVariant}
-              {...rest}
-            />
-            <MainPanel
-              ref={mainPanel}
-              w={{
-                base: "100%",
-                xl: `calc(100% - ${sidebarWidth}px)`,
-              }}
-              variant='rtl'>
-              <Portal>
-                <AdminNavbar
-                  onOpen={onOpen}
-                  logoText={"VISION UI DASHBOARD PRO"}
-                  brandText={getActiveRoute(routes)}
-                  secondary={getActiveNavbar(routes)}
-                  fixed={fixed}
-                  {...rest}
-                />
-              </Portal>
-
-              {getRoute() ? (
-                <PanelContent>
-                  <PanelContainer>
-                    <Switch>
-                      {getRoutes(routes)}
-                      <Redirect from='/rtl' to='/rtl/pages/rtl-support-page' />
-                    </Switch>
-                  </PanelContainer>
-                </PanelContent>
-              ) : null}
-              <Footer />
-              <Portal>
-                <FixedPlugin fixed={fixed} onOpen={onOpen} />
-              </Portal>
-              <Configurator
+        <SidebarContext.Provider
+          value={{
+            sidebarWidth,
+            toggleSidebar,
+            setToggleSidebar,
+          }}>
+          <Sidebar
+            routes={routes}
+            logoText={"VISION UI DASHBOARD PRO"}
+            display='none'
+            sidebarVariant={sidebarVariant}
+            {...rest}
+          />
+          <MainPanel
+            ref={mainPanel}
+            w={{
+              base: "100%",
+              xl: `calc(100% - ${sidebarWidth}px)`,
+            }}
+            variant='rtl'>
+            <Portal>
+              <AdminNavbar
+                onOpen={onOpen}
+                logoText={"VISION UI DASHBOARD PRO"}
+                brandText={getActiveRoute(routes)}
                 secondary={getActiveNavbar(routes)}
-                isOpen={isOpen}
-                onClose={onClose}
-                isChecked={fixed}
-                onSwitch={(value) => {
-                  setFixed(value);
-                }}
-                onOpaque={() => setSidebarVariant("opaque")}
-                onTransparent={() => setSidebarVariant("transparent")}
+                fixed={fixed}
+                {...rest}
               />
-            </MainPanel>
-          </SidebarContext.Provider>
+            </Portal>
+
+            {getRoute() ? (
+              <PanelContent>
+                <PanelContainer>
+                  <Switch>
+                    {getRoutes(routes)}
+                    <Redirect from='/rtl' to='/rtl/pages/rtl-support-page' />
+                  </Switch>
+                </PanelContainer>
+              </PanelContent>
+            ) : null}
+            <Footer />
+            <Portal>
+              <FixedPlugin fixed={fixed} onOpen={onOpen} />
+            </Portal>
+            <Configurator
+              secondary={getActiveNavbar(routes)}
+              isOpen={isOpen}
+              onClose={onClose}
+              isChecked={fixed}
+              onSwitch={(value) => {
+                setFixed(value);
+              }}
+              onOpaque={() => setSidebarVariant("opaque")}
+              onTransparent={() => setSidebarVariant("transparent")}
+            />
+          </MainPanel>
+        </SidebarContext.Provider>
       </RtlProvider>
     </ChakraProvider>
   );

@@ -1,4 +1,19 @@
+/*!
 
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/vision-ui-dashboard-pro-chakra
+* Copyright 2021 Creative Tim (https://www.creative-tim.com/)
+
+
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+*/
+
+/*eslint-disable*/
 import { HamburgerIcon, QuestionIcon } from "@chakra-ui/icons";
 // chakra imports
 import {
@@ -163,7 +178,7 @@ function Sidebar(props) {
                           color={activeColor}
                           my='auto'
                           fontSize='sm'
-                          display={sidebarWidth === 275 ? "block" : "none"}>
+                          display={sidebarWidth === 275 ? "none" : "none"}>
                           {prop.name}
                         </Text>
                       </Flex>
@@ -432,9 +447,65 @@ function Sidebar(props) {
         <Box mb='20px'>{brand}</Box>
         <Box mb='20px'>{links}</Box>
       </Flex>
+
+      {/* <Flex
+        borderRadius='15px'
+        direction='column'
+        bgImage={SidebarHelpImage}
+        bgSize='cover'
+        justifyContent='flex-start'
+        alignItems='start'
+        mt='auto'
+        mb='10px'
+        boxSize='border-box'
+        p={sidebarWidth === 275 ? "16px" : "12px"}
+        h={sidebarWidth === 275 ? "170px" : "auto"}
+        w={sidebarWidth === 275 ? "100%" : "77%"}>
+        <IconBox width='35px' h='35px' bg='white' mb='auto'>
+          <QuestionIcon color='brand.200' h='18px' w='18px' />
+        </IconBox>
+        <Text
+          fontSize='sm'
+          color='white'
+          fontWeight='700'
+          display={sidebarWidth === 275 ? "block" : "none"}>
+SEJA PRO        </Text>
+        <Text
+          fontWeight='500'
+          fontSize='xs'
+          color='white'
+          mb='10px'
+          display={sidebarWidth === 275 ? "block" : "none"}>
+          Escanteios, suporte especial e muito mais...
+        </Text>
+        <Link
+          w='100%'
+          href='https://demos.creative-tim.com/docs-vision-ui-dashboard-pro-chakra/'>
+          <Button
+            fontSize='10px'
+            fontWeight='700'
+            w='100%'
+            bg='linear-gradient(126.97deg, rgba(6, 11, 40, 0.74) 28.26%, rgba(10, 14, 35, 0.71) 91.2%)'
+            _hover='none'
+            _active={{
+              bg:
+                "linear-gradient(126.97deg, rgba(6, 11, 40, 0.74) 28.26%, rgba(10, 14, 35, 0.71) 91.2%)",
+              transform: "none",
+              borderColor: "transparent",
+            }}
+            _focus={{
+              boxShadow: "none",
+            }}
+            color='#fff'
+            display={sidebarWidth === 275 ? "block" : "none"}>
+            DOCUMENTATION
+          </Button>
+        </Link>
+      </Flex> */}
     </Flex>
   );
 
+  // SIDEBAR
   return (
     <Box
       ref={mainPanel}
@@ -449,7 +520,7 @@ function Sidebar(props) {
           : null
       }>
       <Box
-        display={{ sm: "none", xl: "block" }}
+        display={{ sm: "none", xl: "none" }}
         position='fixed'
         maxH='calc(100% - 20px)'>
         <Box
@@ -583,7 +654,7 @@ export function SidebarResponsive(props) {
                           color={activeColor}
                           my='auto'
                           fontSize='sm'
-                          display={"block"}>
+                          display={"none"}>
                           {prop.name}
                         </Text>
                       </Flex>

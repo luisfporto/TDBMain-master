@@ -73,14 +73,20 @@ export default function Default() {
   let history = useHistory();
   const iconBoxInside = useColorModeValue("white", "white");
   return (
+
+   <Box
+   w='100%' pr='250px'>
+
+
      <Flex flexDirection="column" pt={{ base: "50px", sm: "0px", md: "20px" }} alignItems={{sm: "flex-start", lg: "center", md: "center"}}>
       <Flex flexDirection={{ sm: "column", md: "row", lg: "row" }} >
-        <Stack direction={{ sm: "column", md: "row", lg: "row" }} alignItems={{ sm: "center" }}>
+        <Stack direction={{ sm: "column", md: "row", lg: "row" }}
+        pl='80px'>
           <Box boxSize='sm'
             w={{ lg: "120px", md: "120px", sm: "180px" }}
             h={{ lg: "160px", md: "160px", sm: "160px" }}>
             <Image
-              src='https://i.imgur.com/9G7DNMx.png' />
+              src='https://i.imgur.com/9G7DNMx.png'/>
             </Box>
           <Text h={{ lg: "160px", md: "160px", sm: "0px" }}
             color="#fff" fontWeight="bold" fontSize="3xl" mb="30px" pt={{ sm: "0px", md: "25px", lg: "25px" }} mt={{ md: "30px", lg: "30px" }} ps="20px">
@@ -98,14 +104,14 @@ export default function Default() {
       >
         {/* Mini Statistics */}
         <SimpleGrid
-          minChildWidth={{ sm: "350px", lg: "120px" }}
+          minChildWidth={{ sm: "350px", lg: "250px" }}
           columns={{ sm: 1 }}
-          spacing={2}
+          spacing={3}
         >
           <Button
             h="80px"
             style={{ background: "linear-gradient(to right, #FF512F 0%, #F09819  51%, #FF512F  100%)" }}
-
+            w={{lg: '300px', md: '300px', sm: '350px'}}
             borderRadius='12px'
             transition='background .3s ease'
             bg='#FF7500'
@@ -123,7 +129,7 @@ export default function Default() {
             }}>
             <Stack direction='row'>
               <Text pt="8px" fontSize='2xl' color='#fff' fontWeight='bold'>
-                ENTRADAS AO VIVO
+                ENTRADAS LIVE
               </Text>
               <Image
                 pt="3px"
@@ -136,6 +142,7 @@ export default function Default() {
           <Button
             h="80px"
             style={{ background: "linear-gradient(to right, #FF512F 0%, #F09819  51%, #FF512F  100%)" }}
+            w={{lg: '300px', md: '300px', sm: '350px'}}
 
             borderRadius='12px'
             transition='background .3s ease'
@@ -165,6 +172,8 @@ export default function Default() {
 
           </Button>
           <Button
+            w={{lg: '300px', md: '300px', sm: '350px'}}
+
             h="80px"
             style={{ background: "linear-gradient(to right, #FF512F 0%, #F09819  51%, #FF512F  100%)" }}
             borderRadius='12px'
@@ -252,7 +261,7 @@ export default function Default() {
               >
                 <Stat me="auto">
                   <StatLabel fontSize="lg" color="gray.400" pb="2px">
-                    Tips de escanteios (PRO)
+                    Escanteios (PRO)
                   </StatLabel>
 
                   <StatNumber fontSize="5xl" color="#fff">
@@ -544,5 +553,6 @@ export default function Default() {
         </Stack>
       </Stack>
     </Flex>
+    </Box>
   );
 }

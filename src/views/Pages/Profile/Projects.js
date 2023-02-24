@@ -1,23 +1,6 @@
-/*!
-
-=========================================================
-
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/vision-ui-dashboard-pro-chakra
-* Copyright 2021 Creative Tim (https://www.creative-tim.com/)
-
-
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 
 import React, { useReducer } from "react";
 
-// Chakra imports
 import {
   Avatar,
   AvatarBadge,
@@ -155,7 +138,9 @@ function Projects() {
   let history = useHistory();
 
   return (
-    <>
+    <Box
+    w='100%' alignContent='center'>
+    <Flex direction='column'>
       <Stack justifyContent="space-between" direction="row">
         <Box
           boxSize="sm"
@@ -241,7 +226,7 @@ function Projects() {
             <Stack
               direction={{ sm: "column", md: "row", lg: "row" }}
               justify="space-between"
-              justifyContent='center'
+              
             >
               <Card w={{ lg: "350px", md: "350px", sm: "340px"}} h={{ lg: "270px" }}>
                 <CardBody>
@@ -348,7 +333,7 @@ function Projects() {
                     pt="6px"
                     justifyContent="center"
                     pl={{ sm: "25px", lg: "30px" }}
-                    >
+                  >
                     <Flex justifyContent="center" pb="20px">
                       <Text fontSize="md" color="#fff" mt="20px">
                         Ligue 1
@@ -699,7 +684,8 @@ function Projects() {
           </SimpleGrid>
         </Grid>
       </Flex>
-    </>
+</Flex>
+</Box>
   );
 }
 

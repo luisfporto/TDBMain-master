@@ -131,7 +131,6 @@ export default function Dashboard(props) {
         <SidebarContext.Provider
           value={{
             sidebarWidth,
-            setSidebarWidth,
             toggleSidebar,
             setToggleSidebar,
           }}>
